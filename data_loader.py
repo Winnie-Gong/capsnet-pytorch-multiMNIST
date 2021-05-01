@@ -44,9 +44,9 @@ class Dataset:
                 transforms.Normalize((0.1307,), (0.3081,))
             ])
             
-            train_dataset = datasets.SmallNORB('/data/SmallNORB', train=True, download=False,
+            train_dataset = smallNORB('/data/SmallNORB', train=True, download=True,
                                            transform=dataset_transform)
-            test_dataset = datasets.SmallNORB('/data/SmallNORB', train=False, download=False,
+            test_dataset = smallNORB('/data/SmallNORB', train=False, download=True,
                                           transform=dataset_transform)
 
             self.train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=_batch_size, shuffle=True)
